@@ -1,259 +1,232 @@
+/* Variáveis de cores para o tema claro (folha de caderno) */
 :root {
-  --bg: #f1f5f9;
-  --panel: #ffffff;
-  --panel-2: #f8fafc;
-  --ink: #0f172a;
-  --muted: #64748b;
-  --line: #e2e8f0;
-  --brand: #2563eb;
-  --brand-ink: #ffffff;
-  --accent: #f59e0b;
-  --correct: #16a34a;
-  --shadow: 0 10px 30px rgb(15 23 42 / 0.08);
+  --cor-fundo-pagina: #e8eef5;
+  --cor-folha: #fffdf7;
+  --cor-linha-grade: #d6e4f0;
+  --cor-margem-caderno: #f28b82;
+  --cor-texto: #1e293b;
+  --cor-texto-suave: #475569;
+  --cor-destaque: #2563eb;
+  --cor-destaque-texto: #ffffff;
+  --cor-acerto: #15803d;
+  --cor-erro: #b91c1c;
+  --cor-borda: #94a3b8;
+  --cor-botao-bg: #f1f5f9;
+  --cor-sobreposicao: rgba(255, 253, 247, 0.94);
 }
 
-[data-theme="dark"] {
-  --bg: #0b1120;
-  --panel: #111827;
-  --panel-2: #0f172a;
-  --ink: #f8fafc;
-  --muted: #94a3b8;
-  --line: #1f2937;
-  --brand: #3b82f6;
-  --brand-ink: #ffffff;
-  --accent: #fbbf24;
-  --correct: #22c55e;
-  --shadow: 0 10px 30px rgb(0 0 0 / 0.35);
+/* Cores para o tema escuro (caderno noturno / lousa) */
+body.tema-escuro {
+  --cor-fundo-pagina: #0f172a;
+  --cor-folha: #1e293b;
+  --cor-linha-grade: #334155;
+  --cor-margem-caderno: #ef4444;
+  --cor-texto: #f8fafc;
+  --cor-texto-suave: #cbd5e1;
+  --cor-destaque: #38bdf8;
+  --cor-destaque-texto: #0f172a;
+  --cor-acerto: #4ade80;
+  --cor-erro: #f87171;
+  --cor-borda: #64748b;
+  --cor-botao-bg: #334155;
+  --cor-sobreposicao: rgba(30, 41, 59, 0.95);
 }
 
 * {
   box-sizing: border-box;
-}
-
-html,
-body {
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-.app {
-  width: min(760px, 100%);
-  margin: 0 auto;
-  padding: clamp(14px, 3vw, 26px);
-}
-
-.top {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto);
   display: flex;
+  justify-content: center;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  min-height: 100vh;
+  padding: 12px;
 }
 
-.kicker {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
-h1 {
-  margin: 4px 0 0;
-  font-size: clamp(22px, 4.6vw, 30px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.subtitle {
-  margin: 4px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.btn {
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--ink);
-  border-radius: 10px;
-  padding: 9px 13px;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.btn:hover {
-  border-color: var(--brand);
-}
-
-.btn-primary {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: var(--brand-ink);
-}
-
-.btn.full {
+/* Container principal estilo folha de caderno */
+.caderno {
   width: 100%;
-  margin-top: 16px;
+  max-width: 520px;
+  background-color: var(--cor-folha);
+  border: 2px solid var(--cor-borda);
+  border-left: 6px solid var(--cor-margem-caderno);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.hud {
+.cabecalho {
+  border-bottom: 2px dashed var(--cor-linha-grade);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.titulo-area {
   display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.pill {
-  display: inline-flex;
-  gap: 4px;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 999px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 6px 11px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
-.pill strong {
-  color: var(--ink);
+.titulo-area h1 {
+  font-size: 1.35rem;
+  color: var(--cor-destaque);
 }
 
-.board {
+.placar {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 0.95rem;
+  background-color: var(--cor-botao-bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.painel-desafio {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.instrucao-curta {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 4px;
+}
+
+.sequencia-caixa {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  background-color: var(--cor-botao-bg);
+  border: 2px solid var(--cor-destaque);
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.feedback {
+  min-height: 42px;
+  font-size: 0.92rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.feedback.acerto {
+  color: var(--cor-acerto);
+}
+
+.feedback.erro {
+  color: var(--cor-erro);
+}
+
+/* Área do canvas quadriculado */
+.area-jogo {
   position: relative;
-  height: min(58vh, 420px);
-  min-height: 300px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 14px auto;
+  border: 3px solid var(--cor-borda);
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--panel);
-  box-shadow: var(--shadow);
+  background-color: var(--cor-folha);
 }
 
-.start-hint {
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Tela de início e fim por cima do tabuleiro */
+.sobreposicao {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.target {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, #ffffff 0 18%, var(--accent) 19% 40%, #ffffff 41% 52%, var(--brand) 53% 100%);
-  box-shadow: 0 6px 16px rgb(37 99 235 / 0.35);
-  cursor: pointer;
-  animation: pop 0.18s ease;
-}
-
-.target:active {
-  transform: scale(0.94);
-}
-
-@keyframes pop {
-  from {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.bottom {
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 12px;
+  background-color: var(--cor-sobreposicao);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
   text-align: center;
 }
 
-code {
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  padding: 1px 5px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-  background: rgb(2 6 23 / 0.55);
-  backdrop-filter: blur(6px);
-}
-
-.overlay[hidden] {
+.sobreposicao.oculta {
   display: none;
 }
 
-.modal {
-  width: min(360px, 100%);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 26px;
-  text-align: center;
-  box-shadow: 0 30px 80px rgb(0 0 0 / 0.35);
+.cartao-aviso h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: var(--cor-destaque);
 }
 
-.modal-icon {
-  font-size: 40px;
+.cartao-aviso p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 16px;
 }
 
-.modal h2 {
-  margin: 8px 0 0;
-  font-size: 22px;
+/* Botões com tamanho mínimo de 44px para toque fácil no celular */
+button {
+  min-width: 44px;
+  min-height: 44px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid var(--cor-borda);
+  background-color: var(--cor-botao-bg);
+  color: var(--cor-texto);
+  padding: 8px 14px;
+  font-size: 0.95rem;
 }
 
-.modal p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
+button:active {
+  transform: scale(0.97);
 }
 
-@media (min-width: 700px) {
-  html.is-fullscreen .app,
-  html.is-standalone .app {
-    width: min(1000px, 100%);
-  }
-
-  html.is-fullscreen .board,
-  html.is-standalone .board {
-    height: min(68vh, 560px);
-  }
+.botao-principal {
+  background-color: var(--cor-destaque);
+  color: var(--cor-destaque-texto);
+  border-color: var(--cor-destaque);
+  font-size: 1.05rem;
+  padding: 10px 22px;
 }
 
+.controles-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.linha-controle {
+  display: flex;
+  gap: 10px;
+}
+
+.botao-direcao {
+  width: 58px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+/* Respeita a preferência do aparelho por menos animação */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
+  button:active {
+    transform: none;
   }
 }

@@ -1,16 +1,16 @@
 {
-  "slug": "meu-jogo",
-  "title": "Nome do meu jogo",
-  "author": "Seu nome",
-  "authorClass": "Sua turma",
-  "discipline": "Matemática",
-  "grades": ["6º", "7º"],
-  "tags": ["palavra-chave", "outra-palavra"],
-  "description": "Uma frase curta que explica o que o jogo ensina.",
-  "instructions": "Como jogar, em uma ou duas frases.",
-  "duration": 5,
+  "slug": "cobrinha-matematica",
+  "title": "Cobrinha Matemática",
+  "author": "Pedro Augusto",
+  "authorClass": "9º C",
+  "discipline": "Robótica",
+  "grades": ["6º ano", "7º ano", "8º ano", "9º ano"],
+  "tags": ["matemática", "sequências", "contagem", "lógica", "cobrinha"],
+  "description": "Guie a cobrinha pelo caderno quadriculado e coma o próximo número certo da sequência antes de perder suas 3 vidas.",
+  "instructions": "Use as setas do teclado (ou W, A, S, D) no computador, ou toque nos botões direcionais na tela do celular para guiar a cobrinha até o número que completa a sequência.",
+  "duration": "2-4 min",
   "version": "1.0.0",
   "entry": "index.html",
   "cover": "cover.svg",
-  "createdAt": "2026-11-02"
+  "createdAt": "2026-11-24"
 }
